@@ -53,6 +53,7 @@ ZooKeeper operates in a replicated architecture with the following roles:<br>
 ZooKeeper is widely used in technologies like:
 <ul>
   <li>Apache Kafka (to maintain broker metadata and consumer group offsets).</li>
+  <li>For coordination between brokers in the cluster of ActiveMQ Artemis</li>
   <li>Apache Hadoop and HBase (for resource coordination).</li>
   <li>Apache Storm and other distributed systems.</li>
 </ul>
