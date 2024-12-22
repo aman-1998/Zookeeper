@@ -1,7 +1,7 @@
 # Zookeeper Concepts:
 ZooKeeper is an open-source distributed coordination service designed to manage and coordinate large, distributed applications. 
 It provides essential services like configuration management, synchronization, and distributed naming, enabling distributed applications 
-to function smoothly by handling critical coordination tasks.
+to function smoothly by handling critical coordination tasks. Zookeeper was originally developed by **Yahoo!**
 
 ## Key Features of Apache ZooKeeper:
 <ol>
@@ -56,4 +56,15 @@ ZooKeeper is widely used in technologies like:
   <li>For coordination between brokers in the cluster of ActiveMQ Artemis</li>
   <li>Apache Hadoop and HBase (for resource coordination).</li>
   <li>Apache Storm and other distributed systems.</li>
+</ul>
+
+## Key Points:
+<ul>
+  <li type="square">Zookeeper is designed in a way that u can model your problem in terms of zookeeper.</li>
+  <li type="square">Zookeeper server can run in <b>standalone</b> mode or <b>multi-node-cluster</b> mode.
+    <ul>
+      <li type = "circle"><b>Standalone</b> mode means when only one server is running.</li>
+      <li type = "circle"><b>Multi-node-cluster</b> mode means when multiple servers are running.</li>
+    </ul></li>
+  
 </ul>
