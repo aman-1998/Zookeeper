@@ -66,14 +66,23 @@ ZooKeeper is widely used in technologies like:
       <li type = "circle"><b>Standalone</b> mode means when only one server is running.</li>
       <li type = "circle"><b>Multi-node-cluster</b> mode means when multiple servers are running.</li>
     </ul></li>
-  <li><b>Installation and running zookeeper:</b>
+  <li type="square"><b>Installation and running zookeeper (Standalone mode):</b>
     <ol>
       <li>After downloading zookeeper and extracting it, we need to rename conf/zoo_sample.cfg file to conf/zoo.cfg because Zookeeper treats this as default config file.</li> 
       <li>In zoo.cfg file, we have to change the value of <b>dataDir</b> (E.g., dataDir=C:/Softwares/zookeeper/apache-zookeeper-3.8.4/data)</li>
       <li>Go to bin folder and run command <b>zkServer.cmd</b> to tun the zookeeper server.</li>
       <li>If we run <b>start zkServer.cmd</b> then this will launch ZooKeeper in a new command prompt window.</li>
       <li>Now if we want to specify configuration file in the command then the command is <b>zkServer.cmd start conf\zoo.cfg</b> or <b>zkServer.cmd start "C:\Softwares\zookeeper\apache-zookeeper-3.8.4\conf\zoo.cfg"</b>. Specifying configuration file is optional but it will be required while starting multiple servers with different config files to form multi-node-cluster (called Zookeeper Ensemble).</li>
-      <li>If this error is encountered while executing command which contains zoo.cfg => <b>java.lang.NumberFormatException: For input string: "C:zookeeper\zookeeper3.8.4\bin\..\conf\zoo.cfg"</b> then open the zkServer.cmd, find this line : <b>call %JAVA% "-Dzookeeper.log.dir=%ZOO_LOG_DIR%" "-Dzookeeper.log.file=%ZOO_LOG_FILE%" "-XX:+HeapDumpOnOutOfMemoryError" "-XX:OnOutOfMemoryError=cmd /c taskkill /pid %%%%p /t /f" -cp "%CLASSPATH%" %ZOOMAIN% "%ZOOCFG%" %*</b><br> Delete <b>%*</b> from the end and then run the above command in point no. 5. For explanation see : https://stackoverflow.com/questions/11765015/zookeeper-not-starting</li>
+      <li>If this error is encountered while executing command which contains zoo.cfg => <b>java.lang.NumberFormatException: For input string: "C:zookeeper\zookeeper3.8.4\bin\..\conf\zoo.cfg"</b> then open the zkServer.cmd, find this line : <br><b><p>call %JAVA% "-Dzookeeper.log.dir=%ZOO_LOG_DIR%" "-Dzookeeper.log.file=%ZOO_LOG_FILE%" "-XX:+HeapDumpOnOutOfMemoryError" "-XX:OnOutOfMemoryError=cmd /c taskkill /pid %%%%p /t /f" -cp "%CLASSPATH%" %ZOOMAIN% "%ZOOCFG%" %*</p></b> Delete <b>%*</b> from the end and then run the above command in point no. 5. For explanation see : https://stackoverflow.com/questions/11765015/zookeeper-not-starting</li>
+      <li>Zookeeper client can be run using the command <b>zkCli.cmd -server localhost:2181</b></li>
     </ol>
   </li>
+  <li type="square"><b>Running zookeeper in multi-node-cluster mode:</b></li>
+  <ol>
+    <li>Minimum recommended node is 3. Most common production setup is 5 nodes.</li>
+    <li>The number of nodes should be odd.</li>
+    <li>The replicated group od servers is called as <b>quorum</b>.</li>
+    <li>One of the server acts as leader and other servers act as followers. As soon as leader fails new leader is elected.</li>
+    <li></li>
+  </ol>
 </ul>
