@@ -84,6 +84,7 @@ ZooKeeper is widely used in technologies like:
     <li>The replicated group od servers is called as <b>quorum</b>.</li>
     <li>One of the server acts as leader and other servers act as followers. As soon as leader fails new leader is elected.</li>
     <li>Create conf1/zoo.cfg, conf2/zoo.cfg and conf3/zoo.cfg. And then create data1, data2 and data3 folders and mention it in respective zoo.cfg for 3 servers. Then make <b>myid</b> file <b>(no extention)</b> in data1, data2 and data3 folders and write 1, 2 & 3 in it respectively.</li>
+    <li>We have to <b>mention peer to peer connection port</b> and <b>the port of leader election</b> for all the 3 servers in zoo.cfg so that all the servers know about each other. For example server.1=localhost:2887:3887, server.2=localhost:2888:3888 & server.3=localhost:2889:3889</li>
     <li>Run the servers using command: <b>start bin\zkServer.cmd conf1\zoo.cfg</b> and <b>start bin\zkServer.cmd conf2\zoo.cfg</b> and <b>start bin\zkServer.cmd conf3\zoo.cfg</b></li>
     <li>Zookeeper client can be run using the command <b>zkCli.cmd -server localhost:2181,localhost:2182,localhost:2183</b></li>
     <li>Zookeeper client will not give error untill majority of the servers are running.</li>
