@@ -72,8 +72,8 @@ ZooKeeper is widely used in technologies like:
       <li>In zoo.cfg file, we have to change the value of <b>dataDir</b> (E.g., dataDir=C:/Softwares/zookeeper/apache-zookeeper-3.8.4/data)</li>
       <li>Go to bin folder and run command <b>zkServer.cmd</b> to tun the zookeeper server.</li>
       <li>If we run <b>start zkServer.cmd</b> then this will launch ZooKeeper in a new command prompt window.</li>
-      <li>Now if we want to specify configuration file in the command then the command is <b>zkServer.cmd start conf\zoo.cfg</b> or <b>zkServer.cmd start "C:\Softwares\zookeeper\apache-zookeeper-3.8.4\conf\zoo.cfg"</b>. Specifying configuration file is optional but it will be required while starting multiple servers with different config files to form multi-node-cluster (called Zookeeper Ensemble).</li>
-      <li>If this error is encountered while executing command which contains zoo.cfg => <b>java.lang.NumberFormatException: For input string: "C:zookeeper\zookeeper3.8.4\bin\..\conf\zoo.cfg"</b> then open the zkServer.cmd, find this line : <br><b><p>call %JAVA% "-Dzookeeper.log.dir=%ZOO_LOG_DIR%" "-Dzookeeper.log.file=%ZOO_LOG_FILE%" "-XX:+HeapDumpOnOutOfMemoryError" "-XX:OnOutOfMemoryError=cmd /c taskkill /pid %%%%p /t /f" -cp "%CLASSPATH%" %ZOOMAIN% "%ZOOCFG%" %*</p></b> Delete <b>%*</b> from the end and then run the above command in point no. 5. For explanation see : https://stackoverflow.com/questions/11765015/zookeeper-not-starting</li>
+      <li>Now if we want to specify configuration file in the command then the command is <b>bin\zkServer.cmd conf\zoo.cfg</b> or <b>zkServer.cmd "C:\Softwares\zookeeper\apache-zookeeper-3.8.4\conf\zoo.cfg"</b>. Specifying configuration file is optional but it will be required while starting multiple servers with different config files to form multi-node-cluster (called Zookeeper Ensemble).</li>
+      <li>If this error is encountered while executing command which contains zoo.cfg => <b>java.lang.NumberFormatException: For input string: "C:zookeeper\zookeeper3.8.4\bin\..\conf\zoo.cfg"</b> then open the zkServer.cmd and add this line : <b>if not "%1"=="" (set ZOOCFG=%1)</b> in zkServer.cmd. Then find this line : <br><b><p>call %JAVA% "-Dzookeeper.log.dir=%ZOO_LOG_DIR%" "-Dzookeeper.log.file=%ZOO_LOG_FILE%" "-XX:+HeapDumpOnOutOfMemoryError" "-XX:OnOutOfMemoryError=cmd /c taskkill /pid %%%%p /t /f" -cp "%CLASSPATH%" %ZOOMAIN% "%ZOOCFG%" %*</p></b> Delete <b>%*</b> from the end. For explanation see : https://stackoverflow.com/questions/11765015/zookeeper-not-starting</li>
       <li>Zookeeper client can be run using the command <b>zkCli.cmd -server localhost:2181</b></li>
     </ol>
   </li>
@@ -83,6 +83,7 @@ ZooKeeper is widely used in technologies like:
     <li>The number of nodes should be odd.</li>
     <li>The replicated group od servers is called as <b>quorum</b>.</li>
     <li>One of the server acts as leader and other servers act as followers. As soon as leader fails new leader is elected.</li>
-    <li></li>
+    <li>Zookeeper client can be run using the command <b>zkCli.cmd -server localhost:2181,localhost:2182,localhost:2183</b></li>
+    <li>Zookeeper client will not give error untill majority of the servers are running.</li>
   </ol>
 </ul>
