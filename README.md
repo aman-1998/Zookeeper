@@ -85,5 +85,6 @@ ZooKeeper is widely used in technologies like:
     <li>One of the server acts as leader and other servers act as followers. As soon as leader fails new leader is elected.</li>
     <li>Zookeeper client can be run using the command <b>zkCli.cmd -server localhost:2181,localhost:2182,localhost:2183</b></li>
     <li>Zookeeper client will not give error untill majority of the servers are running.</li>
+    <li>Status of each server can be seen on http based interface hosted by Zookeeper Admin server. This admin port can be set in zoo.cfg using <b>admin.serverPort=8081</b>. E.g., http://localhost:8081/commands, http://localhost:8082/commands, http://localhost:8083/commands for server1, server2 and server3 respectively. If you don't configure admin.serverPort in zoo.cfg then by default it is 8080.</li>
   </ol>
 </ul>
