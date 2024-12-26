@@ -90,4 +90,20 @@ ZooKeeper is widely used in technologies like:
     <li>Zookeeper client will not give error untill majority of the servers are running.</li>
     <li>Status of each server can be seen on http based interface hosted by Zookeeper Admin server. This admin port can be set in zoo.cfg using <b>admin.serverPort=8081</b>. E.g., http://localhost:8081/commands, http://localhost:8082/commands, http://localhost:8083/commands for server1, server2 and server3 respectively. If you don't configure admin.serverPort in zoo.cfg then by default it is 8080.</li>
   </ol>
+  <li type="square">Zookeeper data model: </li>
+  <ol>
+    <li>Each node is called is called a Znode.</li>
+    <li>The data that can be stored in a Znode is of type string</li>
+    <li>Maximum size data that can be stored in a Znode is 1 Mb. But general recommendation is that we should store much smaller amount of data compared to 1 Mb.</li>
+    <li>Path: / separated path from root node to the present node. All characters expected except dot(.)</li>
+    <li>Access control list: Allowed users/groups</li>
+    <li>Stats Information: Version number, timestamps, etc</li>
+    <li>Types of Znode:</li>
+    <ul>
+      <li type="circle">Persistent non-sequqntial: Example - create /dummyNode "This is my data"</li>
+      <li type="circle">Persistent sequential: Example - create -s /dummyNode "This is my data"</li>
+      <li type="circle">Ephimeral non-sequential: create -e /dummyNode "This is my data"</li>
+      <li type="circle">Ephimeral sequential: create -e -s /dummyNode "This is my data"</li>
+    </ul>
+  </ol>
 </ul>
