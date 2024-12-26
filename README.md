@@ -100,10 +100,10 @@ ZooKeeper is widely used in technologies like:
     <li>Stats Information: Version number, timestamps, etc</li>
     <li>Types of Znode:</li>
     <ul>
-      <li type="circle">Persistent non-sequqntial: Example - create /dummyNode "This is my data"</li>
-      <li type="circle">Persistent sequential: Example - create -s /dummyNode "This is my data"</li>
-      <li type="circle">Ephimeral non-sequential: create -e /dummyNode "This is my data"</li>
-      <li type="circle">Ephimeral sequential: create -e -s /dummyNode "This is my data"</li>
+      <li type="circle"><b>Persistent non-sequqntial:</b> Example - create /dummyNode "This is my data"</li>
+      <li type="circle"><b>Persistent sequential:</b> Example - create -s /dummyNode "This is my data"</li>
+      <li type="circle"><b>Ephimeral non-sequential:</b> create -e /dummyNode "This is my data"</li>
+      <li type="circle"><b>Ephimeral sequential:</b> create -e -s /dummyNode "This is my data"</li>
     </ul>
   </ol>
 </ul>
