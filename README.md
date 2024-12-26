@@ -98,6 +98,7 @@ ZooKeeper is widely used in technologies like:
     <li>Path: / separated path from root node to the present node. All characters expected except dot(.)</li>
     <li>Access control list: Allowed users/groups</li>
     <li>Stats Information: Version number, timestamps, etc</li>
+    <li>After connecting zookeeper client, we can write commands using zookeeper-client to create Znode.</li>
     <li>Types of Znode:</li>
     <ul>
       <li type="circle"><b>Persistent non-sequqntial:</b> Example - create /dummyNode "This is my data"</li>
