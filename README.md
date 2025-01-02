@@ -112,4 +112,11 @@ ZooKeeper is widely used in technologies like:
     </ol><br>
     <img src="https://github.com/aman-1998/Zookeeper_Concepts/blob/main/images/Znode_datamodel.png"/>
   </li>
+  <li type="square"><b>Applications of Zookeeper:</b>
+    <ol>
+      <li type="1"><b>Cluster Monitoring </b></li>
+      <li type="1"><b>Distributed Lock </b></li>
+      <li type="1"><b>Distributed Queue </b></li>
+    </ol>
+  </li>
 </ul>
