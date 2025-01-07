@@ -1,7 +1,8 @@
 # Zookeeper Concepts:
 ZooKeeper is an open-source distributed coordination service designed to manage and coordinate large, distributed applications. 
 It provides essential services like configuration management, synchronization, and distributed naming, enabling distributed applications 
-to function smoothly by handling critical coordination tasks. Zookeeper was originally developed by **Yahoo!**
+to function smoothly by handling critical coordination tasks. Zookeeper was originally developed by **Yahoo!**<br><br>
+<b>Learning:</b> https://www.youtube.com/playlist?list=PL1F54YqZCTdx4JmaKY99bb9hoD5gHS9bm
 
 ## Key Features of Apache ZooKeeper:
 <ol>
