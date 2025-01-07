@@ -114,9 +114,16 @@ ZooKeeper is widely used in technologies like:
   </li>
   <li type="square"><b>Applications of Zookeeper:</b>
     <ol>
-      <li type="1"><b>Cluster Monitoring </b></li>
-      <li type="1"><b>Distributed Lock </b></li>
-      <li type="1"><b>Distributed Queue </b></li>
+      <li type="1"><b>Cluster Monitoring: </b>We have 3 application servers. And we have a Cluster-monitoring server. Now, if any one of the application server will goes down then Cluster-monitor should be able to detect it. Also whenever a new server joins the cluster, the Cluster-monitoring server should be able to detect. This can be achieved using Zookeeper as cluster management service. Whenever an apllication server is up, it creates a ephemeral znode <b>eg., /members/server-1 or /members/server-2, etc</b>. The cluster monitor will watch <b>/members</b> as a result it will detect whenever a application server is up or down.<br>
+      <img src="https://github.com/aman-1998/Zookeeper_Concepts/blob/main/images/Cluster_monitor.png"/>
+      </li>
+      <li type="1"><b>Distributed Lock: </b>When there are more than one application servers and there is a common resource that will be accessed by every application server (one at a time basis). In such cases, Zookeeper can be used. Every application will create a ephemeral sequential node <b>e.g., /lock/lock-1 or /locks/lock-2, etc</b>. Now, we can have a consensus among ourselves that which ever application server can create a node with lowest value will get the access to the resource.<br>
+      <img src="https://github.com/aman-1998/Zookeeper_Concepts/blob/main/images/Distributed_Lock_1.png"/><br>
+      <img src="https://github.com/aman-1998/Zookeeper_Concepts/blob/main/images/Distributed_Lock_2.png"/>
+      </li>
+      <li type="1"><b>Distributed Queue: </b>We have a queue and there are more than one consumers. Now when all the consumers are in action then no two consumer can consume same element from queue. We can achieve this using the concept of <b>Sequential Node</b> and <b>Distributed Locks</b>.<br>
+      <img src="https://github.com/aman-1998/Zookeeper_Concepts/blob/main/images/Distributed_Queue.png"/>
+      </li>
     </ol>
   </li>
 </ul>
