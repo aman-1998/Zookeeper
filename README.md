@@ -81,7 +81,7 @@ ZooKeeper is widely used in technologies like:
   </li>
   <li type="square"><b>Running zookeeper in multi-node-cluster mode:</b>
     <ol>
-      <li>Minimum recommended node is 3. Most common production setup is 5 nodes.</li>
+      <li>Minimum recommended nodes are 3. Most common production setup is 5 nodes.</li>
       <li>The number of nodes should be odd.</li>
       <li>The replicated group od servers is called as <b>quorum</b>.</li>
       <li>One of the server acts as leader and other servers act as followers. As soon as leader fails new leader is elected.</li>
